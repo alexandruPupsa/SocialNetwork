@@ -1,0 +1,10 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "MainLayout.cshtml";
+}
+
+@section scripts{
+    <script src="~/Content/scripts/main.js"></script>
+}
+
+@Umbraco.RenderMacro("LoginMacro")

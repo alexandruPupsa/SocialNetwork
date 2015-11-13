@@ -1,0 +1,46 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@{
+    var user = Membership.GetUser();
+    var isLoggedIn = user != null;
+}
+
+@if (isLoggedIn)
+{
+    <div id="loggedIn">
+        <span>Logged In!</span>
+    </div>
+}
+else
+{
+
+    <div id="loggedIn" style="display:none">
+        <span>Logged In!</span>
+    </div>
+    
+    <div id="loginRegisterButtons">
+        <a href="" id="showLogin">Login</a>
+        <a href="" id="showRegister">Register</a>
+    </div>
+    
+    <div id="loginContainer">
+        <fieldset>
+            <legend>Login:</legend>
+            Username: <input id="loginUsername" type="text" /><br />
+            Password: <input id="loginPassword" type="password" /><br />
+            <button id="loginButton">Login</button>
+        </fieldset>
+    </div>
+
+    <div id="registerContainer" style="display:none">
+        <fieldset>
+            <legend>Register:</legend>
+            Email: <input id="registerEmail" type="text" /><br />
+            Password: <input id="registerPassword" type="password" /><br/>
+            Confirm password: <input id="registerConfirmPassword" type="password" /><br />
+            <button id="registerButton">Register</button>
+        </fieldset>
+    </div>
+    
+    <p id="errorMessage" style="display:none"></p>
+}
